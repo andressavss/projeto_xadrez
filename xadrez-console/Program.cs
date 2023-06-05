@@ -8,14 +8,20 @@ namespace JogoDeXadrez
     {
         static void Main(string[] args)
         {
-            Tab tab = new Tab(8, 8);
+            try
+            {
+                Tab tab = new Tab(8, 8);
 
-            tab.ColocarPeca(new Torre(Cor.Preta, tab), new Posicao(0, 0));
-            tab.ColocarPeca(new Torre(Cor.Preta, tab), new Posicao(1, 3));
-            tab.ColocarPeca(new Rei(Cor.Preta, tab), new Posicao(2, 4));
+                tab.ColocarPeca(new Torre(Cor.Preta, tab), new Posicao(0, 0));
+                tab.ColocarPeca(new Torre(Cor.Preta, tab), new Posicao(1, 3));
+                tab.ColocarPeca(new Rei(Cor.Preta, tab), new Posicao(0, 2));
 
-            Tela.ImprimirTabuleiro(tab);
-          
+                Tela.ImprimirTabuleiro(tab);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.ReadLine();
         }
     }
